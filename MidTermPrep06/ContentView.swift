@@ -79,14 +79,19 @@ struct ContentView: View {
                         orders.append(i)
                         
                         for item in orders {
-                            totalAmt = totalAmt + menuItems[item]
+                            totalAmt = totalAmt + prices[item]
                             receipt = receipt + "\n\(menuItems[item]): $\(prices[item].formatted())"
                         }
                     }
                     .buttonStyle(.borderedProminent)
                     .font(.caption)
                     .padding()
+                    
                 }
+                Text(receipt)
+                    .padding()
+                Text("Total Payment: $\(totalAmt.formatted())")
+                    .padding()
             }
         }
     }
